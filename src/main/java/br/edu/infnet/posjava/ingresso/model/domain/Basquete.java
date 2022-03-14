@@ -1,6 +1,7 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Basquete extends Jogo {
 
@@ -37,5 +38,23 @@ public class Basquete extends Jogo {
 
     public void setQuadra(String quadra) {
         this.quadra = quadra;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append(";");
+        sb.append(this.time1);
+        sb.append(";");
+        sb.append(this.time2);
+        sb.append(";");
+        sb.append(this.quadra);
+        return sb.toString();
+    }
+
+    @Override
+    public float calcularValorVenda() {
+        return this.getValor() * 0.3f;
     }
 }

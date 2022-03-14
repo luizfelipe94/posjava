@@ -50,8 +50,10 @@ public abstract class Jogo {
         sb.append(this.valor);
         sb.append(";");
         sb.append(this.data.format(formato));
+        sb.append(";");
+        sb.append(this.calcularValorVenda());
         return sb.toString();
     }
-//    public abstract float calcularValorVenda();
+    public abstract float calcularValorVenda();
 
 }

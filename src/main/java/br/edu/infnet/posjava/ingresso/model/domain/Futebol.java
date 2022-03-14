@@ -38,4 +38,22 @@ public class Futebol extends Jogo {
     public void setEstadio(String estadio) {
         this.estadio = estadio;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append(";");
+        sb.append(this.time1);
+        sb.append(";");
+        sb.append(this.time2);
+        sb.append(";");
+        sb.append(this.estadio);
+        return sb.toString();
+    }
+
+    @Override
+    public float calcularValorVenda() {
+        return this.getValor() * 0.2f;
+    }
 }
