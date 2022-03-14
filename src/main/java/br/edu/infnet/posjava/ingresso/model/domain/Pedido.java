@@ -2,10 +2,11 @@ package br.edu.infnet.posjava.ingresso.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class Pedido {
 
-    private Ingresso[] ingressos;
+    private List<Ingresso> ingressos;
     private Torcedor torcedor;
     private String descricao;
     private LocalDateTime data;
@@ -13,7 +14,7 @@ public class Pedido {
 
     public Pedido() {}
 
-    public Pedido(Ingresso[] ingressos, Torcedor torcedor, String descricao, LocalDateTime data, boolean pagamentoOnline) {
+    public Pedido(List<Ingresso> ingressos, Torcedor torcedor, String descricao, LocalDateTime data, boolean pagamentoOnline) {
         this.ingressos = ingressos;
         this.torcedor = torcedor;
         this.descricao = descricao;
@@ -21,11 +22,11 @@ public class Pedido {
         this.pagamentoOnline = pagamentoOnline;
     }
 
-    public Ingresso[] getJogos() {
+    public List<Ingresso> getJogos() {
         return ingressos;
     }
 
-    public void setJogos(Ingresso[] ingressos) {
+    public void setJogos(List<Ingresso> ingressos) {
         this.ingressos = ingressos;
     }
 
@@ -64,9 +65,10 @@ public class Pedido {
     @Override
     public String toString() {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        return String.format("%s;%s;%s",
+        return String.format("%s;%s;%s;%d",
                 descricao,
                 data.format(formato),
-                this.pagamentoOnline ? "sim": "nao");
+                this.pagamentoOnline ? "sim": "nao",
+                this.ingressos.size());
     }
 }
