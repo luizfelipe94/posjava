@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller()
-@RequestMapping("/futebol")
-public class FutebolController {
+@RequestMapping("/basquete")
+public class BasqueteController {
 
     @GetMapping()
     public String listar() {
-        return "/futebol/cadastro";
+        return "/basquete/cadastro";
     }
 
     @PostMapping(value = "/incluir")

@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Futebol</title>
+    <title>Cadastro de Basquete</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <p class="h3">Cadastro de ingresso de futebol</p>
+            <p class="h3">Cadastro de ingresso de basquete</p>
         </div>
         <div class="row">
-            <form action="/futebol/incluir" method="post">
+            <form action="/basquete/incluir" method="post">
                 <div class="mb-3 mt-3">
                     <label for="titulo" class="form-label">Titulo:</label>
                     <input type="text" class="form-control" id="titulo" placeholder="Digite o titulo" name="titulo">
@@ -33,8 +33,8 @@
                     <input type="text" class="form-control" id="time2" placeholder="Digite o time 2" name="time2">
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="estadio" class="form-label">Estádio:</label>
-                    <input type="text" class="form-control" id="estadio" placeholder="Digite o nome do estádio" name="estadio">
+                    <label for="quadra" class="form-label">Quadra:</label>
+                    <input type="text" class="form-control" id="quadra" placeholder="Digite o nome da quadra" name="quadra">
                 </div>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>

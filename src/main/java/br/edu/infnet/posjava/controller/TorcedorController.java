@@ -5,13 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller()
-@RequestMapping("/futebol")
-public class FutebolController {
+@Controller
+@RequestMapping("/torcedor")
+public class TorcedorController {
 
     @GetMapping()
     public String listar() {
-        return "/futebol/cadastro";
+        return "/torcedor/cadastro";
     }
 
     @PostMapping(value = "/incluir")
