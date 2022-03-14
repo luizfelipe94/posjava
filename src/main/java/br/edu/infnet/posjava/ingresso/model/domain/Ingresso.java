@@ -3,38 +3,34 @@ package br.edu.infnet.posjava.ingresso.model.domain;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Ingresso {
+public abstract class Ingresso {
 
-    private Jogo[] jogos;
-    private Torcedor torcedor;
-    private String descricao;
+    private String titulo;
+    private float valor;
     private LocalDateTime data;
-    private boolean pagamentoOnline;
 
     public Ingresso() {}
 
-    public Ingresso(Jogo[] jogos, Torcedor torcedor, String descricao, LocalDateTime data, boolean pagamentoOnline) {
-        this.jogos = jogos;
-        this.torcedor = torcedor;
-        this.descricao = descricao;
+    public Ingresso(String titulo, float valor, LocalDateTime data) {
+        this.titulo = titulo;
+        this.valor = valor;
         this.data = data;
-        this.pagamentoOnline = pagamentoOnline;
     }
 
-    public Jogo[] getJogos() {
-        return jogos;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setJogos(Jogo[] jogos) {
-        this.jogos = jogos;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public float getValor() {
+        return valor;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setValor(float valor) {
+        this.valor = valor;
     }
 
     public LocalDateTime getData() {
@@ -45,28 +41,19 @@ public class Ingresso {
         this.data = data;
     }
 
-    public boolean getPagamentoOnline() {
-        return pagamentoOnline;
-    }
-
-    public void setPagamentoOnline(boolean pagamentoOnline) {
-        this.pagamentoOnline = pagamentoOnline;
-    }
-
-    public Torcedor getTorcedor() {
-        return torcedor;
-    }
-
-    public void setTorcedor(Torcedor torcedor) {
-        this.torcedor = torcedor;
-    }
-
     @Override
     public String toString() {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        return String.format("%s;%s;%s",
-                descricao,
-                data.format(formato),
-                this.pagamentoOnline ? "sim": "nao");
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.titulo);
+        sb.append(";");
+        sb.append(this.valor);
+        sb.append(";");
+        sb.append(this.data.format(formato));
+        sb.append(";");
+        sb.append(this.calcularValorVenda());
+        return sb.toString();
     }
+    public abstract float calcularValorVenda();
+
 }

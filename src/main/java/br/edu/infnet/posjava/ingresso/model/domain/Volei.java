@@ -2,7 +2,7 @@ package br.edu.infnet.posjava.ingresso.model.domain;
 
 import java.time.LocalDateTime;
 
-public class Volei extends Jogo {
+public class Volei extends Ingresso {
 
     private String time1;
     private String time2;

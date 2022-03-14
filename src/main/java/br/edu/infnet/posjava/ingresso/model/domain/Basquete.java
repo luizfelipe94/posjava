@@ -1,9 +1,8 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
-public class Basquete extends Jogo {
+public class Basquete extends Ingresso {
 
     private String time1;
     private String time2;

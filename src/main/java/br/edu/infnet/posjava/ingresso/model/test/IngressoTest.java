@@ -1,6 +1,6 @@
 package br.edu.infnet.posjava.ingresso.model.test;
 
-import br.edu.infnet.posjava.ingresso.model.domain.Ingresso;
+import br.edu.infnet.posjava.ingresso.model.domain.Pedido;
 import br.edu.infnet.posjava.ingresso.model.domain.Torcedor;
 
 public class IngressoTest {
@@ -9,13 +9,13 @@ public class IngressoTest {
 
         Torcedor torcedor = new Torcedor();
 
-        Ingresso ingresso = new Ingresso();
-        ingresso.setDescricao("Primeiro ingresso");
-        ingresso.setPagamentoOnline(true);
-        ingresso.setTorcedor(torcedor);
-        ingresso.setJogos(null);
+        Pedido pedido = new Pedido();
+        pedido.setDescricao("Primeiro ingresso");
+        pedido.setPagamentoOnline(true);
+        pedido.setTorcedor(torcedor);
+        pedido.setJogos(null);
 
-        System.out.println(ingresso);
+        System.out.println(pedido);
     }
 
 }
