@@ -1,6 +1,7 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Ingresso {
 
@@ -8,14 +9,16 @@ public class Ingresso {
     private Torcedor torcedor;
     private String descricao;
     private LocalDateTime data;
-    private String formaPagamento;
+    private boolean pagamentoOnline;
 
-    public Ingresso(Jogo[] jogos, Torcedor torcedor, String descricao, LocalDateTime data, String formaPagamento) {
+    public Ingresso() {}
+
+    public Ingresso(Jogo[] jogos, Torcedor torcedor, String descricao, LocalDateTime data, boolean pagamentoOnline) {
         this.jogos = jogos;
         this.torcedor = torcedor;
         this.descricao = descricao;
         this.data = data;
-        this.formaPagamento = formaPagamento;
+        this.pagamentoOnline = pagamentoOnline;
     }
 
     public Jogo[] getJogos() {
@@ -42,12 +45,12 @@ public class Ingresso {
         this.data = data;
     }
 
-    public String getFormaPagamento() {
-        return formaPagamento;
+    public boolean getPagamentoOnline() {
+        return pagamentoOnline;
     }
 
-    public void setFormaPagamento(String formaPagamento) {
-        this.formaPagamento = formaPagamento;
+    public void setPagamentoOnline(boolean pagamentoOnline) {
+        this.pagamentoOnline = pagamentoOnline;
     }
 
     public Torcedor getTorcedor() {
@@ -56,5 +59,14 @@ public class Ingresso {
 
     public void setTorcedor(Torcedor torcedor) {
         this.torcedor = torcedor;
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return String.format("%s;%s;%s",
+                descricao,
+                data.format(formato),
+                this.pagamentoOnline ? "sim": "nao");
     }
 }

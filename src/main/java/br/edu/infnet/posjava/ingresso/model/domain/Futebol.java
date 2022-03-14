@@ -8,8 +8,8 @@ public class Futebol extends Jogo {
     private String time2;
     private String estadio;
 
-    public Futebol(String titulo, String descricao, LocalDateTime data, String time1, String time2, String estadio) {
-        super(titulo, descricao, data);
+    public Futebol(String titulo, float valor, LocalDateTime data, String time1, String time2, String estadio) {
+        super(titulo, valor, data);
         this.time1 = time1;
         this.time2 = time2;
         this.estadio = estadio;

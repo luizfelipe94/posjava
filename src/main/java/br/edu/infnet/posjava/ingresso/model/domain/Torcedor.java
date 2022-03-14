@@ -6,6 +6,8 @@ public class Torcedor {
     private String cpf;
     private String email;
 
+    public Torcedor() {}
+
     public Torcedor(String nome, String cpf, String email) {
         this.nome = nome;
         this.cpf = cpf;

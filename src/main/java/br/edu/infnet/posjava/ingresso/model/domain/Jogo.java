@@ -1,18 +1,19 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public abstract class Jogo {
 
     private String titulo;
-    private String descricao;
+    private float valor;
     private LocalDateTime data;
 
     public Jogo() {}
 
-    public Jogo(String titulo, String descricao, LocalDateTime data) {
+    public Jogo(String titulo, float valor, LocalDateTime data) {
         this.titulo = titulo;
-        this.descricao = descricao;
+        this.valor = valor;
         this.data = data;
     }
 
@@ -24,12 +25,12 @@ public abstract class Jogo {
         this.titulo = titulo;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public float getValor() {
+        return valor;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setValor(float valor) {
+        this.valor = valor;
     }
 
     public LocalDateTime getData() {
@@ -39,4 +40,18 @@ public abstract class Jogo {
     public void setData(LocalDateTime data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.titulo);
+        sb.append(";");
+        sb.append(this.valor);
+        sb.append(";");
+        sb.append(this.data.format(formato));
+        return sb.toString();
+    }
+//    public abstract float calcularValorVenda();
+
 }

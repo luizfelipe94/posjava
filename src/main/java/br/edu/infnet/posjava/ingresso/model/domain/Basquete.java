@@ -8,8 +8,8 @@ public class Basquete extends Jogo {
     private String time2;
     private String quadra;
 
-    public Basquete(String titulo, String descricao, LocalDateTime data, String time1, String time2, String quadra) {
-        super(titulo, descricao, data);
+    public Basquete(String titulo, float valor, LocalDateTime data, String time1, String time2, String quadra) {
+        super(titulo, valor, data);
         this.time1 = time1;
         this.time2 = time2;
         this.quadra = quadra;
