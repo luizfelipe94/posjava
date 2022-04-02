@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,10 +21,10 @@
                     <label for="valor" class="form-label">Valor:</label>
                     <input type="text" class="form-control" id="valor" placeholder="Digite o valor" name="valor">
                 </div>
-                <div class="mb-3 mt-3">
-                    <label for="data" class="form-label">Data:</label>
-                    <input type="datetime-local" class="form-control" id="data" placeholder="Escolha a data" name="data">
-                </div>
+<%--                <div class="mb-3 mt-3">--%>
+<%--                    <label for="data" class="form-label">Data:</label>--%>
+<%--                    <input type="datetime-local" class="form-control" id="data" placeholder="Escolha a data" name="data">--%>
+<%--                </div>--%>
                 <div class="mb-3 mt-3">
                     <label for="time1" class="form-label">Time 1:</label>
                     <input type="text" class="form-control" id="time1" placeholder="Digite o time 1" name="time1">

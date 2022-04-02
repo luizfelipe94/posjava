@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public abstract class Ingresso {
 
+    private Integer id;
     private String titulo;
     private float valor;
     private LocalDateTime data;
@@ -15,6 +16,14 @@ public abstract class Ingresso {
         this.titulo = titulo;
         this.valor = valor;
         this.data = data;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitulo() {

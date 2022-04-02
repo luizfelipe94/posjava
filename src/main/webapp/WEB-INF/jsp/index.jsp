@@ -17,7 +17,7 @@
             <div class="row">
                 <div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="futebol">Cadastro Ingresso de Futebol</a></li>
+                        <li class="list-group-item"><a href="/futebol/listar">Cadastro Ingresso de Futebol</a></li>
                         <li class="list-group-item"><a href="basquete">Cadastro Ingresso de Basquete</a></li>
                         <li class="list-group-item"><a href="volei">Cadastro Ingresso de Volei</a></li>
                         <li class="list-group-item"><a href="torcedor">Cadastro Ingresso de Torcedor</a></li>
