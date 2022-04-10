@@ -2,31 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Volei</title>
+    <title>Cadastro de Usuario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <p class="h3">Cadastro de ingresso de volei</p>
+        <p class="h3">Cadastro de Usuario</p>
     </div>
     <div class="row">
-        <form action="/volei/incluir" method="post">
+        <form action="/usuario/incluir" method="post">
             <div class="mb-3 mt-3">
-                <label for="titulo" class="form-label">Titulo:</label>
-                <input type="text" class="form-control" id="titulo" placeholder="Digite o titulo" name="titulo">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="nome">
             </div>
             <div class="mb-3 mt-3">
-                <label for="valor" class="form-label">Valor:</label>
-                <input type="text" class="form-control" id="valor" placeholder="Digite o valor" name="valor">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Digite o email" name="email">
             </div>
-<%--            <div class="mb-3 mt-3">--%>
-<%--                <label for="data" class="form-label">Data:</label>--%>
-<%--                <input type="datetime-local" class="form-control" id="data" placeholder="Escolha a data" name="data">--%>
-<%--            </div>--%>
             <div class="mb-3 mt-3">
-                <label for="time1" class="form-label">Time 1:</label>
-                <input type="text" class="form-control" id="time1" placeholder="Digite o time 1" name="time1">
+                <label for="senha" class="form-label">Senha:</label>
+                <input type="password" class="form-control" id="senha" placeholder="Digite a senha" name="senha">
             </div>
             <div class="mb-3 mt-3">
                 <label for="time2" class="form-label">Time 2:</label>

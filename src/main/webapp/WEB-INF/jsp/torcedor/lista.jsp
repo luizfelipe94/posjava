@@ -3,47 +3,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Basquete</title>
+    <title>Cadastro de Volei</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <p class="h3">Cadastro de ingresso de basquete</p>
+            <p class="h3">Cadastro de Torcedor</p>
         </div>
         <div class="row">
-            <form action="/basquete/cadastro" method="get">
+            <form action="/torcedor/cadastro" method="get">
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
         </div>
         <div class="row">
 
             <c:if test="${not empty listagem}">
-                <p>Listagem de ingressos de basquete (${listagem.size()})</p>
+                <p>Listagem de torcedores (${listagem.size()})</p>
                 <table class="table table-striped">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Titulo</th>
-                        <th>Valor</th>
-                        <th>Data</th>
-                        <th>Time 1</th>
-                        <th>Time 2</th>
-                        <th>Quadra</th>
-                        <th>Acoes</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Email</th>
                     </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="o" items="${listagem}">
                             <tr>
                                 <td>${o.id}</td>
-                                <td>${o.titulo}</td>
-                                <td>${o.valor}</td>
-                                <td>${o.data}</td>
-                                <td>${o.time1}</td>
-                                <td>${o.time2}</td>
-                                <td>${o.quadra}</td>
-                                <td><a href="/basquete/${o.id}/excluir">excluir</a></td>
+                                <td>${o.nome}</td>
+                                <td>${o.cpf}</td>
+                                <td>${o.email}</td>
+                                <td><a href="/torcedor/${o.id}/excluir">excluir</a></td>
                             </tr>
                         </c:forEach>
                     </tbody>

@@ -1,32 +1,29 @@
 package br.edu.infnet.posjava.ingresso.model.service;
 
 import br.edu.infnet.posjava.ingresso.model.domain.Futebol;
+import br.edu.infnet.posjava.ingresso.model.repository.FutebolRepository;
 import org.springframework.stereotype.Service;
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
 public class FutebolService {
 
-    private static Map<Integer, Futebol> mapa = new HashMap<>();
-    private static Integer key = 1;
+    FutebolRepository futebolRepository;
 
-    public Collection<Futebol> obterLista() {
-        return mapa.values();
+    FutebolService(FutebolRepository futebolRepository) {
+        this.futebolRepository = futebolRepository;
     }
 
-    public void incluir(Futebol futebol){
-        key++;
-        futebol.setId(key);
-        mapa.put(key, futebol);
+    public Collection<Futebol> obterLista(){
+        return (Collection<Futebol>) this.futebolRepository.findAll();
     }
 
-    public void excluir(Integer id){
-        mapa.remove(id);
+    public void incluir(Futebol futebol) {
+        this.futebolRepository.save(futebol);
     }
 
-    public Futebol obterPorId(Integer id){
-        return mapa.get(id);
+    public void excluir(Integer id) {
+        this.futebolRepository.deleteById(id);
     }
 
 }

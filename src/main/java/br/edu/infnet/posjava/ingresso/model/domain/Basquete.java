@@ -1,7 +1,11 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tb_basquete")
 public class Basquete extends Ingresso {
 
     private String time1;
@@ -13,6 +17,10 @@ public class Basquete extends Ingresso {
         this.time1 = time1;
         this.time2 = time2;
         this.quadra = quadra;
+    }
+
+    public Basquete() {
+        super();
     }
 
     public String getTime1() {

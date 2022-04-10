@@ -1,7 +1,11 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tb_futebol")
 public class Futebol extends Ingresso {
 
     private String time1;
@@ -13,6 +17,10 @@ public class Futebol extends Ingresso {
         this.time1 = time1;
         this.time2 = time2;
         this.estadio = estadio;
+    }
+
+    public Futebol() {
+        super();
     }
 
     public String getTime1() {

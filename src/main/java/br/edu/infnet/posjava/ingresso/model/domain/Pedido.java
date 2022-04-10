@@ -1,11 +1,17 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+@Entity
+@Table(name = "tb_pedido")
 public class Pedido {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private List<Ingresso> ingressos;
     private Torcedor torcedor;
     private String descricao;
