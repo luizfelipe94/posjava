@@ -4,10 +4,12 @@ import br.edu.infnet.posjava.ingresso.model.domain.Usuario;
 import br.edu.infnet.posjava.ingresso.model.service.UsuarioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
+import javax.servlet.http.HttpSession;
+
+@SessionAttributes("usuarioLogado")
 @Controller
 public class AcessoController {
 
@@ -25,6 +27,13 @@ public class AcessoController {
     @GetMapping(value = "/login")
     public String telaLogin(){
         return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session, SessionStatus status) {
+        status.setComplete();
+        session.removeAttribute("usuarioLogado");
+        return "redirect:/";
     }
 
     @PostMapping(value = "/login")

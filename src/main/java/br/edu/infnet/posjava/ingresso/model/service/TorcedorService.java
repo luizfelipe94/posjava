@@ -1,7 +1,9 @@
 package br.edu.infnet.posjava.ingresso.model.service;
 
 import br.edu.infnet.posjava.ingresso.model.domain.Torcedor;
+import br.edu.infnet.posjava.ingresso.model.domain.Usuario;
 import br.edu.infnet.posjava.ingresso.model.repository.TorcedorRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -15,8 +17,8 @@ public class TorcedorService {
         this.torcedorRepository = torcedorRepository;
     }
 
-    public Collection<Torcedor> obterLista(){
-        return (Collection<Torcedor>) this.torcedorRepository.findAll();
+    public Collection<Torcedor> obterLista(Usuario usuario){
+        return (Collection<Torcedor>) this.torcedorRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
     }
 
     public void incluir(Torcedor torcedor) {

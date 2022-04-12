@@ -1,13 +1,12 @@
 package br.edu.infnet.posjava.ingresso.model.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-@MappedSuperclass
+@Entity
+@Table(name = "tb_ingresso")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Ingresso {
 
     @Id
@@ -16,6 +15,9 @@ public abstract class Ingresso {
     private String titulo;
     private float valor;
     private LocalDateTime data;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Ingresso() {}
 
@@ -55,6 +57,14 @@ public abstract class Ingresso {
 
     public void setData(LocalDateTime data) {
         this.data = data;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override

@@ -12,6 +12,9 @@ public class Torcedor {
     private String nome;
     private String cpf;
     private String email;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Torcedor() {}
 
@@ -51,5 +54,13 @@ public class Torcedor {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
