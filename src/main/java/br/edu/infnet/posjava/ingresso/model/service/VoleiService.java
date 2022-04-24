@@ -1,7 +1,9 @@
 package br.edu.infnet.posjava.ingresso.model.service;
 
+import br.edu.infnet.posjava.ingresso.model.domain.Usuario;
 import br.edu.infnet.posjava.ingresso.model.domain.Volei;
 import br.edu.infnet.posjava.ingresso.model.repository.VoleiRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.Collection;
 
@@ -14,8 +16,8 @@ public class VoleiService {
         this.voleiRepository = voleiRepository;
     }
 
-    public Collection<Volei> obterLista(){
-        return (Collection<Volei>) this.voleiRepository.findAll();
+    public Collection<Volei> obterLista(Usuario usuario){
+        return (Collection<Volei>) this.voleiRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "titulo"));
     }
 
     public void incluir(Volei volei) {

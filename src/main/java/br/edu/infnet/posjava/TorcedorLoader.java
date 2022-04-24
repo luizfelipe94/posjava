@@ -23,15 +23,15 @@ public class TorcedorLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Usuario usuario = new Usuario();
-        usuario.setId(1);
-
-        Torcedor torcedor = new Torcedor();
-        torcedor.setCpf("123123");
-        torcedor.setEmail("torcedor@torcedor.com");
-        torcedor.setNome("Luiz Silva");
-        torcedor.setUsuario(usuario);
-
-        this.torcedorService.incluir(torcedor);
+//        Usuario usuario = new Usuario();
+//        usuario.setId(1);
+//
+//        Torcedor torcedor = new Torcedor();
+//        torcedor.setCpf("123123");
+//        torcedor.setEmail("torcedor@torcedor.com");
+//        torcedor.setNome("Luiz Silva");
+//        torcedor.setUsuario(usuario);
+//
+//        this.torcedorService.incluir(torcedor);
     }
 }

@@ -3,6 +3,7 @@ package br.edu.infnet.posjava.ingresso.model.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_ingresso")
@@ -18,6 +19,9 @@ public abstract class Ingresso {
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
+
+    @ManyToMany(mappedBy = "ingressos")
+    private List<Pedido> pedidos;
 
     public Ingresso() {}
 
@@ -65,6 +69,14 @@ public abstract class Ingresso {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 
     @Override

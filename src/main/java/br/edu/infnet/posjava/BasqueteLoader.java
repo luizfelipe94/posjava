@@ -22,15 +22,15 @@ public class BasqueteLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Usuario usuario = new Usuario();
-        usuario.setId(1);
-        Basquete basquete = new Basquete();
-        basquete.setTitulo("flamengo x vasco");
-        basquete.setValor(60);
-        basquete.setQuadra("rua2");
-        basquete.setTime1("flamengo");
-        basquete.setTime2("vasco");
-        basquete.setUsuario(usuario);
-        this.basqueteService.incluir(basquete);
+//        Usuario usuario = new Usuario();
+//        usuario.setId(1);
+//        Basquete basquete = new Basquete();
+//        basquete.setTitulo("flamengo x vasco");
+//        basquete.setValor(60);
+//        basquete.setQuadra("rua2");
+//        basquete.setTime1("flamengo");
+//        basquete.setTime2("vasco");
+//        basquete.setUsuario(usuario);
+//        this.basqueteService.incluir(basquete);
     }
 }

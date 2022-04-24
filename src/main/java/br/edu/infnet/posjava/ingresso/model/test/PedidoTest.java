@@ -25,7 +25,7 @@ public class PedidoTest {
         pedido.setDescricao("Primeiro ingresso");
         pedido.setPagamentoOnline(true);
         pedido.setTorcedor(torcedor);
-        pedido.setJogos(ingressos);
+        pedido.setIngressos(ingressos);
 
         System.out.println(pedido);
     }

@@ -21,15 +21,16 @@ public class FutebolLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Usuario usuario = new Usuario();
-        usuario.setId(1);
-        Futebol futebol = new Futebol();
-        futebol.setTitulo("flamengo x vasco");
-        futebol.setValor(60);
-        futebol.setEstadio("maracana");
-        futebol.setTime1("flamengo");
-        futebol.setTime2("vasco");
-        futebol.setUsuario(usuario);
-        this.futebolService.incluir(futebol);
+
+//        Usuario usuario = new Usuario();
+//        usuario.setId(1);
+//        Futebol futebol = new Futebol();
+//        futebol.setTitulo("flamengo x vasco");
+//        futebol.setValor(60);
+//        futebol.setEstadio("maracana");
+//        futebol.setTime1("flamengo");
+//        futebol.setTime2("vasco");
+//        futebol.setUsuario(usuario);
+//        this.futebolService.incluir(futebol);
     }
 }

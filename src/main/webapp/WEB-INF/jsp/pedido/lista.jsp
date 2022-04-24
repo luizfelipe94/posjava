@@ -11,37 +11,33 @@
 <c:import url="../menu.jsp"/>
 
 <div class="container mt-3">
-    <h2>Cadastramento de Usuários</h2>
+    <h2>Cadastramento de Pedidos</h2>
+    <form action="/pedido" method="get">
+        <button type="submit" class="btn btn-primary">Novo Pedido</button>
+    </form>
 
     <c:if test="${not empty listagem}">
-        <p>Listagem de usuários (${listagem.size()}):</p>
+        <p>Listagem de pedidos (${listagem.size()}):</p>
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Torcedores</th>
-                <th>Produtos</th>
-                <th>Pedidos</th>
-                <c:if test="${usuarioLogado.admin}">
-                    <th></th>
-                </c:if>
-
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Ingressos</th>
+                <th>Torcedor</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             <c:forEach var="o" items="${listagem}">
                 <tr>
                     <td>${o.id}</td>
-                    <td>${o.nome}</td>
-                    <td>${o.email}</td>
-                    <td>${o.torcedores.size()}</td>
+                    <td>${o.descricao}</td>
+                    <td>${o.data}</td>
                     <td>${o.ingressos.size()}</td>
-                    <td>${o.pedidos.size()}</td>
-                    <c:if test="${usuarioLogado.admin}">
-                        <td><a href="/usuario/${o.id}/excluir">excluir</a></td>
-                    </c:if>
+                    <td>${o.torcedor.nome}</td>
+                    <td><a href="/pedido/${o.id}/excluir">excluir</a></td>
                 </tr>
             </c:forEach>
             </tbody>

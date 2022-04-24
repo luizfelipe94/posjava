@@ -22,15 +22,15 @@ public class VoleiLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Usuario usuario = new Usuario();
-        usuario.setId(1);
-        Volei volei = new Volei();
-        volei.setTitulo("flamengo x vasco");
-        volei.setValor(60);
-        volei.setQuadra("rua2");
-        volei.setTime1("flamengo");
-        volei.setTime2("vasco");
-        volei.setUsuario(usuario);
-        this.voleiService.incluir(volei);
+//        Usuario usuario = new Usuario();
+//        usuario.setId(1);
+//        Volei volei = new Volei();
+//        volei.setTitulo("flamengo x vasco");
+//        volei.setValor(60);
+//        volei.setQuadra("rua2");
+//        volei.setTime1("flamengo");
+//        volei.setTime2("vasco");
+//        volei.setUsuario(usuario);
+//        this.voleiService.incluir(volei);
     }
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(schema = "tb_usuario")
+@Table(name = "tb_usuario")
 public class Usuario {
 
     @Id
@@ -15,12 +15,16 @@ public class Usuario {
     private String email;
     private String senha;
     private boolean admin;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JoinColumn(name = "idUsuario")
     private List<Torcedor> torcedores;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JoinColumn(name = "idUsuario")
     private List<Ingresso> ingressos;
+
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JoinColumn(name = "idUsuario")
+    private List<Pedido> pedidos;
 
     public Usuario() {}
 
@@ -78,5 +82,13 @@ public class Usuario {
 
     public void setIngressos(List<Ingresso> ingressos) {
         this.ingressos = ingressos;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 }

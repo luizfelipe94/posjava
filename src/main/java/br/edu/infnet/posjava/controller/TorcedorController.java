@@ -1,9 +1,7 @@
 package br.edu.infnet.posjava.controller;
 
-import br.edu.infnet.posjava.ingresso.model.domain.Futebol;
 import br.edu.infnet.posjava.ingresso.model.domain.Torcedor;
 import br.edu.infnet.posjava.ingresso.model.domain.Usuario;
-import br.edu.infnet.posjava.ingresso.model.service.FutebolService;
 import br.edu.infnet.posjava.ingresso.model.service.TorcedorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

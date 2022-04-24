@@ -1,7 +1,9 @@
 package br.edu.infnet.posjava.ingresso.model.service;
 
 import br.edu.infnet.posjava.ingresso.model.domain.Basquete;
+import br.edu.infnet.posjava.ingresso.model.domain.Usuario;
 import br.edu.infnet.posjava.ingresso.model.repository.BasqueteRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.Collection;
 
@@ -14,8 +16,8 @@ public class BasqueteService {
         this.basqueteRepository = basqueteRepository;
     }
 
-    public Collection<Basquete> obterLista(){
-        return (Collection<Basquete>) this.basqueteRepository.findAll();
+    public Collection<Basquete> obterLista(Usuario usuario){
+        return (Collection<Basquete>) this.basqueteRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "titulo"));
     }
 
     public void incluir(Basquete basquete) {

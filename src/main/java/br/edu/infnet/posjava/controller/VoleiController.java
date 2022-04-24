@@ -1,13 +1,11 @@
 package br.edu.infnet.posjava.controller;
 
+import br.edu.infnet.posjava.ingresso.model.domain.Usuario;
 import br.edu.infnet.posjava.ingresso.model.domain.Volei;
 import br.edu.infnet.posjava.ingresso.model.service.VoleiService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/volei")
@@ -25,15 +23,14 @@ public class VoleiController {
     }
 
     @GetMapping(value = "/listar")
-    public String lista(Model model) {
-
-        model.addAttribute("listagem", this.voleiService.obterLista());
-
+    public String lista(Model model, @SessionAttribute("usuarioLogado") Usuario usuario) {
+        model.addAttribute("listagem", this.voleiService.obterLista(usuario));
         return "/volei/lista";
     }
 
     @PostMapping(value = "/incluir")
-    public String incluir(Model model, Volei volei) {
+    public String incluir(Model model, Volei volei, @SessionAttribute("usuarioLogado") Usuario usuario) {
+        volei.setUsuario(usuario);
         this.voleiService.incluir(volei);
         return "redirect:/volei/listar";
     }

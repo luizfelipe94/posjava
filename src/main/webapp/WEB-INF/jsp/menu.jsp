@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <nav class="navbar navbar-inverse">
@@ -8,12 +8,13 @@
         </div>
         <c:if test="${not empty usuarioLogado}">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="/usuario/listar">Usuario</a></li>
+                <li><a href="/ingresso/listar">Ingresso</a></li>
                 <li><a href="/torcedor/listar">Torcedor</a></li>
-                <li><a href="/pedido/listar">Pedido</a></li>
                 <li><a href="/futebol/listar">Futebol</a></li>
                 <li><a href="/volei/listar">Volei</a></li>
                 <li><a href="/basquete/listar">Basquete</a></li>
+                <li><a href="/pedido/listar">Pedido</a></li>
             </ul>
         </c:if>
         <ul class="nav navbar-nav navbar-right">

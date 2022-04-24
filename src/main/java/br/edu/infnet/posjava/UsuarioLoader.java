@@ -19,11 +19,16 @@ public class UsuarioLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Usuario usuario = new Usuario();
-        usuario.setAdmin(true);
-        usuario.setEmail("luiz.silva@al.infnet.edu.br");
-        usuario.setNome("Luiz Silva");
-        usuario.setSenha("123");
-        this.usuarioService.incluir(usuario);
+
+        try {
+            Usuario usuario = new Usuario();
+            usuario.setAdmin(true);
+            usuario.setEmail("luiz.silva@al.infnet.edu.br");
+            usuario.setNome("Luiz Silva");
+            usuario.setSenha("123");
+            this.usuarioService.incluir(usuario);
+        }catch (Exception ignored) {
+
+        }
     }
 }

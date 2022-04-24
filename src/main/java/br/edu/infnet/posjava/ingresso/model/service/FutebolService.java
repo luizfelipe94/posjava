@@ -17,7 +17,7 @@ public class FutebolService {
     }
 
     public Collection<Futebol> obterLista(Usuario usuario){
-        return (Collection<Futebol>) this.futebolRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
+        return (Collection<Futebol>) this.futebolRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "titulo"));
     }
 
     public void incluir(Futebol futebol) {
